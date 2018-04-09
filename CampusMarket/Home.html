@@ -19,6 +19,12 @@ input[type=text], input[type=password] {
     border: 1px solid #ccc;
     box-sizing: border-box;
 }
+/* Set style for each item posting */
+#item {
+	border-style: solid;
+	border-width: 1px;
+	height: 400px;
+}
 
 /* Set a style for all buttons */
 #button1 {
@@ -184,49 +190,49 @@ span.psw {
 
   <!-- First Photo Grid-->
   <div class="w3-row-padding w3-padding-16 w3-center" id="food">
-    <div class="w3-quarter">
-      <img src="images/dino.png" alt="Dino" style="width: 200px; height: 200px;">
-	  <h3>Not a Dog</h3>
-      <p>Price: $0.00 <br /> Just some random text, lorem ipsum text praesent tincidunt ipsum lipsum.</p>
+    <div id="item" class="w3-quarter">
+      <div class="placehere">
+      	
+      </div>
     </div>
-    <div class="w3-quarter">
-      <img src="images/sofa.png" alt="Sofa" style="width: 200px; height: 200px;">
-      <h3>Comfier than the Chair</h3>
-      <p>Price: $0.00 <br /> Once again, some random text to lorem lorem lorem lorem ipsum text praesent tincidunt ipsum lipsum.</p>
+    <div id="item" class="w3-quarter">
+      <div class="placehere">
+      	
+      </div>
     </div>
-    <div class="w3-quarter">
-      <img src="images/bed.png" alt="Bed" style="width: 200px; height: 200px;">
-      <h3>Use for Sleeping Please</h3>
-      <p>Price: $0.00 <br /> Lorem ipsum text praesent tincidunt ipsum lipsum.</p>
+    <div id="item" class="w3-quarter">
+      <div class="placehere">
+      	
+      </div>
     </div>
-    <div class="w3-quarter">
-      <img src="images/table.png" alt="Table" style="width: 200px; height: 200px;">
-      <h3>Set Stuff on this Table</h3>
-      <p>Price: $0.00 <br /> Lorem ipsum text praesent tincidunt ipsum lipsum.</p>
+    <div id="item" class="w3-quarter">
+      <div class="placehere">
+      	
+      </div>
     </div>
   </div>
   
   <!-- Second Photo Grid-->
   <div class="w3-row-padding w3-padding-16 w3-center">
-    <div class="w3-quarter">
-      <img src="images/bed.png" alt="Bed" style="width: 200px; height: 200px;">
-      <h3>Not For Sale</h3>
-      <p>Price: $0.00 <br /> Just some random text, lorem ipsum text praesent tincidunt ipsum lipsum.</p>
+    <div id="item" class="w3-quarter">
+      <div class="placehere">
+      	
+      </div>
     </div>
-	<div class="w3-quarter">
-      <img src="images/chair.png" alt="Chair" style="width: 200px; height: 200px;">
-      <h3>A chair that is not comfy</h3>
-      <p>Price: $0.00 <br /> Lorem ipsum text praesent tincidunt ipsum lipsum.</p>
+    <div id="item" class="w3-quarter">
+      <div class="placehere">
+      	
+      </div>
     </div>
-    <div class="w3-quarter">
-      <img src="images/dino.png" alt="Dino" style="width: 200px; height: 200px;">
-      <h3>Rawr = Not a Dog Still</h3>
-      <p>Price: $0.00 <br /> Once again, some random text to lorem lorem lorem lorem ipsum text praesent tincidunt ipsum lipsum.</p>
+    <div id="item" class="w3-quarter">
+      <div class="placehere">
+      	
+      </div>
     </div>
-    <div class="w3-quarter">
-      <img src="images/table.png" alt="Table" style="width: 200px; height: 200px;">
-      <h3>Fake Table</h3>
-      <p>Price: $0.00 <br /> Lorem lorem lorem lorem ipsum text praesent tincidunt ipsum lipsum.</p>
+    <div id="item" class="w3-quarter">
+      <div class="placehere">
+      	
+      </div>
     </div>
   </div>
 
@@ -280,6 +286,29 @@ function w3_close() {
     document.getElementById("mySidebar").style.display = "none";
 }
 </script>
+
+<script>
+	window.onload = function() {
+		//read listings txt file
+		var reader = new FileReader();
+		
+		
+  		//Format Image
+  		var elem = document.createElement("img");
+  		elem.src = "images/dino.png";
+  		elem.setAttribute("height", "200");
+  		elem.setAttribute("width", "200");
+  		elem.setAttribute("alt", "Dino");
+  		var d = document.getElementsByClassName("placehere");
+		var arrayLength = d.length;
+		for (var i = 0; i < arrayLength; i++) {
+	  		d[i].appendChild(elem);
+	  		d[i].innerHTML += "<h3>Here</h3>";
+		}
+  		
+	};
+</script>
+	
 <script>
 // Script for sign in
 // Get the modal
@@ -291,6 +320,11 @@ window.onclick = function(event) {
         modal.style.display = "none";
     }
 }
+<<<<<<< Local Changes
+document.addEventListener("DOMContentLoaded", 
+
+=======
+>>>>>>> External Changes
 </script>
 </body>
 </html>

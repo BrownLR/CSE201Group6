@@ -1,0 +1,4 @@
+images/dino.txt
+Not a Dog
+$0.00
+Just some random text, lorem ipsum text praesent tincidunt ipsum lipsum.
