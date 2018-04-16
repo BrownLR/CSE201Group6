@@ -14,3 +14,7 @@ images/shelf.jpg
 Shelves
 Great for storing things. Great for games of tag with small children.
 $0.00
+images/lamp.JPG
+Lamp
+It's lit.
+$10.00
