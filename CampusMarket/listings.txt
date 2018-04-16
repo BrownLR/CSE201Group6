@@ -1,4 +1,12 @@
-images/dino.txt
-Not a Dog
-$0.00
-Just some random text, lorem ipsum text praesent tincidunt ipsum lipsum.
+images/dino.png
+Dinosaur
+Has lots and lots of teeth. They hurt. Do not pet.
+$10000.00
+images/sofa.png
+Sofa
+Comfortable and affordable. Please get this thing off of my hands.
+$10.00
+images/table.png
+Table
+Sit on this and stuff. I used to eat potato chips in it. Sorry.
+$50.00
