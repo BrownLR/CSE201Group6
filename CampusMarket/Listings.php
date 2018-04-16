@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-	<title>Campus Market</title>
+	<title>Campus Market: Listings</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -13,6 +13,7 @@
 			height: 400px;
 		}
 	</style>
+	
 	<?php
 		function readListings() {
 			$listings = array();
@@ -179,6 +180,58 @@
 		    </div>
 		  </div>
 		  
+		  <!-- Third Photo Grid-->
+		  <div class="w3-row-padding w3-padding-16 w3-center">
+		    <div id="item" class="w3-quarter">
+		      <div class="placehere">
+		      	<img src="<?php echo $listings[$item]; ?>" style="width:200px;height:200px;" />
+				<?php $item = $item + 1; ?>
+				<h3> <?php echo $listings[$item]; ?> </h3>
+				<?php $item = $item + 1; ?>
+				<p> <?php echo $listings[$item]; ?> </br>
+				<?php $item = $item + 1; ?> 
+				<?php echo $listings[$item]; ?> </p>
+				<?php $item = $item + 1; ?>
+		      </div>
+		    </div>
+		    <div id="item" class="w3-quarter">
+		      <div class="placehere">
+		      	<img src="<?php echo $listings[$item]; ?>" style="width:200px;height:200px;" />
+				<?php $item = $item + 1; ?>
+				<h3> <?php echo $listings[$item]; ?> </h3>
+				<?php $item = $item + 1; ?>
+				<p> <?php echo $listings[$item]; ?> </br>
+				<?php $item = $item + 1; ?> 
+				<?php echo $listings[$item]; ?> </p>
+				<?php $item = $item + 1; ?>
+		      </div>
+		    </div>
+		    <div id="item" class="w3-quarter">
+		      <div class="placehere">
+		      	<img src="<?php echo $listings[$item]; ?>" style="width:200px;height:200px;" />
+				<?php $item = $item + 1; ?>
+				<h3> <?php echo $listings[$item]; ?> </h3>
+				<?php $item = $item + 1; ?>
+				<p> <?php echo $listings[$item]; ?> </br>
+				<?php $item = $item + 1; ?> 
+				<?php echo $listings[$item]; ?> </p>
+				<?php $item = $item + 1; ?>
+		      </div>
+		    </div>
+		    <div id="item" class="w3-quarter">
+		      <div class="placehere">
+		      	<img src="<?php echo $listings[$item]; ?>" style="width:200px;height:200px;" />
+				<?php $item = $item + 1; ?>
+				<h3> <?php echo $listings[$item]; ?> </h3>
+				<?php $item = $item + 1; ?>
+				<p> <?php echo $listings[$item]; ?> </br>
+				<?php $item = $item + 1; ?> 
+				<?php echo $listings[$item]; ?> </p>
+				<?php $item = $item + 1; ?>
+		      </div>
+		    </div>
+		  </div>
+		  
 		  <!-- Search -->
 		  <div class="w3-center w3-padding-32">
 			  <form action="/search.php" method="get" target="listings.php">
@@ -186,52 +239,7 @@
 			    <input type="submit" value="search">
 			  </form>
 	  	  </div>
-		
-		  <!-- Pagination 
-		  <div class="w3-center w3-padding-32">
-		    <div class="w3-bar">
-		      <a href="#" class="w3-bar-item w3-button w3-hover-black">«</a>
-		      <a href="#" class="w3-bar-item w3-black w3-button">1</a>
-		      <a href="#" class="w3-bar-item w3-button w3-hover-black">2</a>
-		      <a href="#" class="w3-bar-item w3-button w3-hover-black">3</a>
-		      <a href="#" class="w3-bar-item w3-button w3-hover-black">4</a>
-		      <a href="#" class="w3-bar-item w3-button w3-hover-black">»</a>
-		    </div>
-		  </div> -->
   		
-	  	  <hr id="add">
-
-		  <!-- Add Listing Section -->
-		  <div class="w3-container w3-padding-32 w3-center">  
-			  <h3>Add Listing</h3>
-			  <form action="upload.php" method="post" enctype="multipart/form-data" target="Home.php">
-					Select image to upload: <br>
-			    	<input type="file" name="fileToUpload" id="fileToUpload">
-					<br>
-			  		Listing Title:<br>
-			    	<input type="text" name="title" value="Item Name">
-			    	<br>
-			    	Listing Description:<br>
-			    	<input type="text" name="descript" value="info...">
-					<br>
-			  		Price:<br>
-			    	<input type="text" name="price" value="0.00">
-			    	<br><br>
-			      <input type="submit" value="Add Listing" name="submit">
-			  </form>
-		  </div>
-		
-		  <hr id="about">
-
-		  <!-- About Section -->
-		  <div class="w3-container w3-padding-32 w3-center">  
-		    <img src="images/miamilogo.jpg" alt="Logo" class="w3-image" style="display:block;margin:auto" width="800">
-		    <div class="w3-padding-32">
-		      <h4><b>Conveniently Buy and Sell Home Necessities!</b></h4>
-		      <h6><i>Make Decorating Easier</i></h6>
-		      <p>The Campus Market is a web application to make moving in and out of campus and near campus housing easier. The software is designed for universities. Students can buy or sell their used items in their own communities. Since all transactions occur among people who are nearby each other, they can drop off or pick up items easily and avoid shipping costs.</p>
-		    </div>
-		  </div>
 		  <hr>
   
 		  <!-- Footer -->
