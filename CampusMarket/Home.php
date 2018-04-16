@@ -181,7 +181,7 @@
 		  
 		  <!-- Search -->
 		  <div class="w3-center w3-padding-32">
-			  <form action="/search.php" method="get" target="listings.php">
+			  <form action="/search.php" method="get" target="_self">
 			    <input type="text" name="search" value="Search Criteria...">
 			    <input type="submit" value="search">
 			  </form>

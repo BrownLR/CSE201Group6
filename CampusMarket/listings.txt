@@ -10,3 +10,7 @@ images/table.png
 Table
 Sit on this and stuff. I used to eat potato chips in it. Sorry.
 $50.00
+images/shelf.jpg
+Shelves
+Great for storing things. Great for games of tag with small children.
+$0.00
