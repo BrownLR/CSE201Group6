@@ -44,7 +44,7 @@
 		  <a href="javascript:void(0)" onclick="w3_close()"
 		  class="w3-bar-item w3-button">Close Menu</a>
 		  <a href="http://localhost/Home.php" onclick="w3_close()" class="w3-bar-item w3-button">Home</a>
-		  <a href="#about" onclick="w3_close()" class="w3-bar-item w3-button">About</a>
+		  <a href="http://localhost/Home.php#about" onclick="w3_close()" class="w3-bar-item w3-button">About</a>
 		</nav>
 
 		<!-- Top menu -->
@@ -60,28 +60,45 @@
 
 		<!-- !PAGE CONTENT! -->
 		<div class="w3-main w3-content w3-padding" style="max-width:1200px;margin-top:100px">
-		  
-		  <!-- Search -->
-		  <div class="w3-center w3-padding-32">
-			  <form action="/search.php" method="get" target="_self">
-			    <input type="text" name="search" value="Search Criteria...">
-			    <input type="submit" value="search">
-			  </form>
-	  	  </div>
-  		
-		  <hr id="about">
+	  	  <hr>
 
-		  <!-- About Section -->
-		  <div class="w3-container w3-padding-32 w3-center">  
-		    <img src="images/miamilogo.jpg" alt="Logo" class="w3-image" style="display:block;margin:auto" width="800">
-		    <div class="w3-padding-32">
-		      <h4><b>Conveniently Buy and Sell Home Necessities!</b></h4>
-		      <h6><i>Make Decorating Easier</i></h6>
-		      <p>The Campus Market is a web application to make moving in and out of campus and near campus housing easier. The software is designed for universities. Students can buy or sell their used items in their own communities. Since all transactions occur among people who are nearby each other, they can drop off or pick up items easily and avoid shipping costs.</p>
-		    </div>
+		  <!-- Login -->
+		  <div class="w3-container w3-padding-32 w3-half w3-center">  
+			  <h3>Login</h3>
+			  <form action="account.php" method="get" enctype="multipart/form-data">
+					Username:<br>
+			    	<input type="text" name="name">
+			    	<br>
+			    	Password:<br>
+			    	<input type="password" name="pass">
+					<br><br>
+			      <input type="submit" value="Login" name="submit">
+			  </form>
 		  </div>
+		 
+		  <!-- Sign up -->
+		  <div class="w3-container w3-padding-32 w3-half w3-center">  
+			  <h3>Sign Up</h3>
+			  <form action="uploadAccount.php" method="post" enctype="multipart/form-data">
+			    	Venmo:<br>
+			    	<input type="text" name="venmo">
+					<br>
+					Username:<br>
+			    	<input type="text" name="name">
+			    	<br>
+			    	Password:<br>
+			    	<input type="text" name="pass">
+					<br>
+			    	Confirm Password:<br>
+			    	<input type="text" name="cpass">
+					<br><br>
+			      <input type="submit" value="Sign Up" name="submit">
+			  </form>
+		  </div>
+		  <div class="w3-container w3-padding-32 w3-center"></div>
+		  
 		  <hr>
-  
+		  
 		  <!-- Footer -->
 		  <footer class="w3-row-padding w3-padding-32">
 		    <div class="w3-third">
@@ -92,7 +109,7 @@
       
 		    </div>
 		  </footer>
-
+		  
 		<!-- End page content -->
 		</div>
 

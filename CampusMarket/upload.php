@@ -38,6 +38,7 @@ if ($uploadOk == 0) {
     if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
         echo "The file ". basename( $_FILES["fileToUpload"]["name"]). " has been uploaded.<br>";
 		$myfile = fopen("listings.txt", "a");
+		fwrite($myfile, "User: " . $_POST['user'] . "\n");
 		fwrite($myfile, $target_file . "\n");
 		fwrite($myfile, $_POST['title'] . "\n");
 		fwrite($myfile, $_POST['descript'] . "\n");

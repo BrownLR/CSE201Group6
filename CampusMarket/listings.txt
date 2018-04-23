@@ -1,20 +1,35 @@
+User: Logan
 images/dino.png
 Dinosaur
 Has lots and lots of teeth. They hurt. Do not pet.
 $10000.00
+User: Logan
 images/sofa.png
 Sofa
 Comfortable and affordable. Please get this thing off of my hands.
 $10.00
+User: Logan
 images/table.png
 Table
 Sit on this and stuff. I used to eat potato chips in it. Sorry.
 $50.00
+User: Logan
 images/shelf.jpg
 Shelves
 Great for storing things. Great for games of tag with small children.
 $0.00
+User: Logan
 images/lamp.JPG
 Lamp
 It's lit.
 $10.00
+User: Logan
+images/rock.png
+Rock
+Pet rock. Lots of responsibility. Feed three times a day. Will wake you up at night.
+$60.00
+User: Test
+images/clock.JPG
+Clock
+Tells time very well. Not digital. Sorry. Please forgive me.
+$5.00
