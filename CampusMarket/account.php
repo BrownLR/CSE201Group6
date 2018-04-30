@@ -63,7 +63,11 @@
 	    }
 	}
 	if ($valid == 0) {
-		echo '<a href="http://localhost/login.php?">Invalid Username of Password</a>'; 
+		echo '<div class="w3-center">';
+		echo 'Invalid USERNAME or PASSWORD';
+		echo '<br>';
+		echo '<a href="http://localhost/login.php?">Click Here to Return</a>'; 
+		echo '</div>';
 		exit;
 	}
 	fclose($myfile);
@@ -101,117 +105,38 @@
 		<div class="w3-top">
 			<div class="w3-white w3-xlarge" style="max-width:1300px;margin:auto">
 				<div id="nav"class="w3-button w3-padding-16 w3-left" onclick="is_clicked()">☰</div>
-				<div class="w3-right w3-padding-16"><form action="login.php" method="get"><input type="submit" value="Login"></form></div>
 				<div class="w3-center w3-padding-16"><?php echo $username ?>'s Page</div>
 			</div>
 		</div>
 	
 		<!-- !PAGE CONTENT! -->
 		<div class="w3-main w3-content w3-padding" style="max-width:1200px;margin-top:100px">
-		  
-		  <!-- First Photo Grid-->
-		  <div class="w3-row-padding w3-padding-16 w3-center">
-		    <div id="item" class="w3-quarter">
-		      <div class="placehere">
-		      	<img src="<?php echo $listings[$item]; ?>" style="width:200px;height:200px;" />
-				<?php $item = $item + 1; ?>
-				<h3> <?php echo $listings[$item]; ?> </h3>
-				<?php $item = $item + 1; ?>
-				<p> <?php echo $listings[$item]; ?> </br>
-				<?php $item = $item + 1; ?> 
-				<?php echo $listings[$item]; ?> </p>
-				<?php $item = $item + 1; ?> 
-		      </div>
-		    </div>
-		    <div id="item" class="w3-quarter">
-		      <div class="placehere">
-		      	<img src="<?php echo $listings[$item]; ?>" style="width:200px;height:200px;" />
-				<?php $item = $item + 1; ?>
-				<h3> <?php echo $listings[$item]; ?> </h3>
-				<?php $item = $item + 1; ?>
-				<p> <?php echo $listings[$item]; ?> </br>
-				<?php $item = $item + 1; ?> 
-				<?php echo $listings[$item]; ?> </p>
-				<?php $item = $item + 1; ?>
-		      </div>
-		    </div>
-		    <div id="item" class="w3-quarter">
-		      <div class="placehere">
-		      	<img src="<?php echo $listings[$item]; ?>" style="width:200px;height:200px;" />
-				<?php $item = $item + 1; ?>
-				<h3> <?php echo $listings[$item]; ?> </h3>
-				<?php $item = $item + 1; ?>
-				<p> <?php echo $listings[$item]; ?> </br>
-				<?php $item = $item + 1; ?> 
-				<?php echo $listings[$item]; ?> </p>
-				<?php $item = $item + 1; ?>
-		      </div>
-		    </div>
-		    <div id="item" class="w3-quarter">
-		      <div class="placehere">
-		      	<img src="<?php echo $listings[$item]; ?>" style="width:200px;height:200px;" />
-				<?php $item = $item + 1; ?>
-				<h3> <?php echo $listings[$item]; ?> </h3>
-				<?php $item = $item + 1; ?>
-				<p> <?php echo $listings[$item]; ?> </br>
-				<?php $item = $item + 1; ?> 
-				<?php echo $listings[$item]; ?> </p>
-				<?php $item = $item + 1; ?>
-		      </div>
-		    </div>
-		  </div>
-  
-		  <!-- Second Photo Grid-->
-		  <div class="w3-row-padding w3-padding-16 w3-center">
-		    <div id="item" class="w3-quarter">
-		      <div class="placehere">
-		      	<img src="<?php echo $listings[$item]; ?>" style="width:200px;height:200px;" />
-				<?php $item = $item + 1; ?>
-				<h3> <?php echo $listings[$item]; ?> </h3>
-				<?php $item = $item + 1; ?>
-				<p> <?php echo $listings[$item]; ?> </br>
-				<?php $item = $item + 1; ?> 
-				<?php echo $listings[$item]; ?> </p>
-				<?php $item = $item + 1; ?>
-		      </div>
-		    </div>
-		    <div id="item" class="w3-quarter">
-		      <div class="placehere">
-		      	<img src="<?php echo $listings[$item]; ?>" style="width:200px;height:200px;" />
-				<?php $item = $item + 1; ?>
-				<h3> <?php echo $listings[$item]; ?> </h3>
-				<?php $item = $item + 1; ?>
-				<p> <?php echo $listings[$item]; ?> </br>
-				<?php $item = $item + 1; ?> 
-				<?php echo $listings[$item]; ?> </p>
-				<?php $item = $item + 1; ?>
-		      </div>
-		    </div>
-		    <div id="item" class="w3-quarter">
-		      <div class="placehere">
-		      	<img src="<?php echo $listings[$item]; ?>" style="width:200px;height:200px;" />
-				<?php $item = $item + 1; ?>
-				<h3> <?php echo $listings[$item]; ?> </h3>
-				<?php $item = $item + 1; ?>
-				<p> <?php echo $listings[$item]; ?> </br>
-				<?php $item = $item + 1; ?> 
-				<?php echo $listings[$item]; ?> </p>
-				<?php $item = $item + 1; ?>
-		      </div>
-		    </div>
-		    <div id="item" class="w3-quarter">
-		      <div class="placehere">
-		      	<img src="<?php echo $listings[$item]; ?>" style="width:200px;height:200px;" />
-				<?php $item = $item + 1; ?>
-				<h3> <?php echo $listings[$item]; ?> </h3>
-				<?php $item = $item + 1; ?>
-				<p> <?php echo $listings[$item]; ?> </br>
-				<?php $item = $item + 1; ?> 
-				<?php echo $listings[$item]; ?> </p>
-				<?php $item = $item + 1; ?>
-		      </div>
-		    </div>
-		  </div>
+		<?php
+			if ($listings[$item] == null) {
+				echo 'User has no listings';
+			}
+		  	for ($i = 0; $i < 3 && $listings[$item] != null; ++$i) {
+		  		echo '<div class="w3-row-padding w3-padding-16 w3-center">';
+				for ($j = 0; $j < 4 ; ++$j) {
+					if ($listings[$item] == null) {
+						break 1;
+					} else {
+						echo '<div id="item" class="w3-quarter">';
+						echo '<div class="placehere">';
+						echo '<img src=' . $listings[$item] . 'style="width:200px;height:200px;" />';
+						$item = $item + 1;
+						echo '<h3>' . $listings[$item] . '</h3>';
+						$item = $item + 1;
+						echo '<p>' . $listings[$item] . '</br>';
+						$item = $item + 1;
+						echo $listings[$item] . '</p>';
+						$item = $item + 1;
+						echo '</div></div>';
+					}
+				}
+				echo '</div>';
+			}
+		 ?>
   		
 	  	  <hr id="add">
 

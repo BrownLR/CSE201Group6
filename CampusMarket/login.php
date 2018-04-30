@@ -64,7 +64,7 @@
 		<div class="w3-top">
 			<div class="w3-white w3-xlarge" style="max-width:1300px;margin:auto">
 				<div id="nav"class="w3-button w3-padding-16 w3-left" onclick="is_clicked()">☰</div>
-				<div class="w3-right w3-padding-16"><form action="login.php" method="get"><input type="submit" value="Login"></form></div>
+				<div class="w3-right w3-padding-16"><form action="login.php" method="get"><input type="submit" value="Accounts"></form></div>
 				<div class="w3-center w3-padding-16">Campus Market</div>
 			</div>
 		</div>

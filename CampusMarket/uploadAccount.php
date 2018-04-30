@@ -12,12 +12,12 @@ while(!feof($myfile)) {
     }
 }
 if ($uploadOk == 0) {
-	echo "Username in use.";
+	echo "Username in use. ";
 }
 
 if($_POST['pass'] != $_POST['cpass']) {
 	$uploadOk = 0;
-	echo "Passwords do not match";
+	echo "Passwords do not match. ";
 }
 
 if ($uploadOk == 1) {
@@ -25,5 +25,6 @@ if ($uploadOk == 1) {
 	fwrite($myfile, $_POST['pass'] . "\n");
 	fwrite($myfile, $_POST['venmo'] . "\n");
 	fclose($myfile);
+	header( "refresh:1;url=http://localhost/account.php?name=".$_POST['name']."&pass=".$_POST['pass']."&submit=Login" );
 }
 ?>

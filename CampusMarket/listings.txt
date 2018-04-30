@@ -28,8 +28,7 @@ images/rock.png
 Rock
 Pet rock. Lots of responsibility. Feed three times a day. Will wake you up at night.
 $60.00
-User: Ling
-images/umbrella.jpg
-Umbrella
-Keeps you dry.
-$10.00
+
+
+
+

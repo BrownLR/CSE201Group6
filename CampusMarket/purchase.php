@@ -1,62 +1,33 @@
 <?php
-$file = 'listings.txt';
-$searchfor = $_GET['search'];
+$name = $_GET['name'];
 
-// get the file contents, assuming the file to be readable (and exist)
-$contents = file_get_contents($file);
+function getAccountInfo() {
+	global $name;
 
-// escape special characters in the query
-$pattern = preg_quote($searchfor, '/');
-
-function getMatches($str) {
-	$images = array();
-	$myfile = fopen("listings.txt", "r") or die("Unable to open file!");
-	$lastImg = "";
+	$accountInfo = array();
+	$myfile = fopen("accounts.txt", "r") or die("Unable to open file!");
 	while(!feof($myfile)) {
 		$line = fgets($myfile);
 		$line = str_replace("\n", "", $line);
-	    if (substr($line, 0, 6) == "images") {
-			$lastImg = $line;
-	    }
-		if (stripos($line, $str) !== false) {
-			if (!in_array($lastImg, $images)) {
-				array_push($images, $lastImg);
-			}
+		if($line == $name) {
+			array_push($accountInfo, $line);
+			array_push($accountInfo, fgets($myfile));
+			array_push($accountInfo, fgets($myfile));
 		}
 	}
 	fclose($myfile);
-	return $images;
+	return $accountInfo;
 }
-
-$images = getMatches($pattern);
-
-function getListings($img) {
-	$listings = array();
-	$myfile = fopen("listings.txt", "r") or die("Unable to open file!");
-	while(!feof($myfile)) {
-		$line = fgets($myfile);
-		$line = str_replace("\n", "", $line);
-		if (in_array($line, $img)) {
-			array_push($listings, $line);
-			array_push($listings, fgets($myfile));
-			array_push($listings, fgets($myfile));
-			array_push($listings, fgets($myfile));
-		}
-	}
-	fclose($myfile);
-	return $listings;
-}
-
-$listings = getListings($images);
-$item = 0;
+$list = getAccountInfo();
 ?>
-
+<!DOCTYPE html>
 <html>
-	<title>Campus Market: Listings</title>
+	<title>Campus Market</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Karma">
+	
 	<style>
 		/* Set style for each item posting */
 		#item {
@@ -64,16 +35,7 @@ $item = 0;
 			border-width: 1px;
 			height: 400px;
 		}
-		a.button {
-		    -webkit-appearance: button;
-		    -moz-appearance: button;
-		    appearance: button;
-			
-		    text-decoration: none;
-		    color: initial;
-		}
 	</style>
-	
 
 	<script>
 	// Script to open and close sidebar
@@ -120,35 +82,12 @@ $item = 0;
 
 		<!-- !PAGE CONTENT! -->
 		<div class="w3-main w3-content w3-padding" style="max-width:1200px;margin-top:100px">
-		  <hr id="items">
-  		<?php
-  			if ($listings[$item] == null) {
-  				echo 'No items matching search';
-  			}
-  		  	for ($i = 0; $i < 3 && $listings[$item] != null; ++$i) {
-  		  		echo '<div class="w3-row-padding w3-padding-16 w3-center">';
-  				for ($j = 0; $j < 4 ; ++$j) {
-  					if ($listings[$item] == null) {
-  						break 1;
-  					} else {
-  						echo '<div id="item" class="w3-quarter">';
-  						echo '<div class="placehere">';
-						$img = $listings[$item];
-  						echo '<img src=\'' . $img . '\'style="width:200px;height:200px;" />';
-						$item = $item + 1;
-  						echo '<h3>' . $listings[$item] . '</h3>';
-  						$item = $item + 1;
-  						echo '<p>' . $listings[$item] . '</br>';
-  						$item = $item + 1;
-  						echo $listings[$item] . '</p>';
-  						$item = $item + 1;
-						echo '<a href="http://localhost/remove.php?img='.$img.'" class="button">Buy</a>';
-						echo '</div></div>';
-  					}
-  				}
-  				echo '</div>';
-  			}
-		 ?>
+		  
+		  <!-- Seller Info -->
+		  <h1>Seller Name: <?php echo substr($list[0], 6);?></h1>
+		  <h1>Seller Venmo: <?php echo $list[2];?></h1>
+		  <h1>Price: <?php echo $_GET['price']?></h1>
+		  <hr>
 		  
 		  <!-- Search -->
 		  <div class="w3-center w3-padding-32">
@@ -157,7 +96,6 @@ $item = 0;
 			    <input type="submit" value="search">
 			  </form>
 	  	  </div>
-  		
 		  <hr>
   
 		  <!-- Footer -->
