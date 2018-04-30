@@ -23,12 +23,4 @@ images/lamp.JPG
 Lamp
 It's lit.
 $10.00
-User: Logan
-images/rock.png
-Rock
-Pet rock. Lots of responsibility. Feed three times a day. Will wake you up at night.
-$60.00
-
-
-
 

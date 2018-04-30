@@ -4,6 +4,3 @@ venmo
 User: Ling
 password
 LingVenmo
-User: Test
-password
-TestVenmo

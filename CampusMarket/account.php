@@ -88,6 +88,11 @@
 	}
 	fclose($myfile);
 	$item = 0;
+	
+	if($_GET['err'] != '') {
+		$message = $_GET['err'];
+		echo "<script type='text/javascript'>alert('$message');</script>";
+	}
 ?>
 
 	<body>
@@ -143,10 +148,9 @@
 		  <!-- Add Listing Section -->
 		  <div class="w3-container w3-padding-32 w3-center">  
 			  <h3>Add Listing</h3>
-			  <form action="upload.php" method="post" enctype="multipart/form-data" target="Home.php">
-					Username: <br>
-			    	<input type="text" name="user">
-					<br>
+			  <form action="upload.php" method="post" enctype="multipart/form-data">
+			    	<input type="hidden" name="user" value="<?php echo $username; ?>">
+					<input type="hidden" name="pass" value="<?php echo $password; ?>">
 					Select image to upload: <br>
 			    	<input type="file" name="fileToUpload" id="fileToUpload">
 					<br>
