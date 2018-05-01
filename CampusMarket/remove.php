@@ -3,11 +3,11 @@
 $img = $_GET['img'];
 $name = '';
 $price = '';
+$pickup = '';
 function removeListing($img) {
-	global $name, $price;
+	global $name, $price, $pickup;
 	$t = '';
 	$prevLine = "";
-	$listings = array();
 	$myfile = fopen("listings.txt", "r") or die("Unable to open file!");
 	while(!feof($myfile)) {
 		$line = fgets($myfile);
@@ -19,6 +19,8 @@ function removeListing($img) {
 			$line = fgets($myfile);
 			$line = fgets($myfile);
 			$price = $line;
+			$line = fgets($myfile);
+			$pickup = $line;
 		} else {
 			$t = $t.$line."\n";
 		}
@@ -33,5 +35,5 @@ $myfile = fopen("listings.txt", "w") or die("Unable to open file!");
 fwrite($myfile, $lines);
 unlink($img);
 fclose($myfile);
-header( "refresh:1;url=http://localhost/purchase.php?name=".$name."&price=".$price);
+header( "refresh:1;url=http://localhost/purchase.php?name=".$name."&price=".$price."&date=".$pickup);
 ?>

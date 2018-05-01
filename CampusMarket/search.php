@@ -41,6 +41,7 @@ function getListings($img) {
 			array_push($listings, fgets($myfile));
 			array_push($listings, fgets($myfile));
 			array_push($listings, fgets($myfile));
+			array_push($listings, fgets($myfile));
 		}
 	}
 	fclose($myfile);
@@ -60,17 +61,22 @@ $item = 0;
 	<style>
 		/* Set style for each item posting */
 		#item {
+			border-color: lightgray;
 			border-style: solid;
 			border-width: 1px;
-			height: 400px;
+			border-radius: 12px;
+			height: 450px;
 		}
 		a.button {
 		    -webkit-appearance: button;
 		    -moz-appearance: button;
 		    appearance: button;
-			
+			padding: 5px 11px;
 		    text-decoration: none;
 		    color: initial;
+			position: relative;
+			bottom: 10px;
+			left: 100px;
 		}
 	</style>
 	
@@ -131,18 +137,20 @@ $item = 0;
   					if ($listings[$item] == null) {
   						break 1;
   					} else {
-  						echo '<div id="item" class="w3-quarter">';
-  						echo '<div class="placehere">';
+  						echo '<div class="w3-quarter">';
+						echo '<div id="item" class="w3-padding-16">';
 						$img = $listings[$item];
-  						echo '<img src=\'' . $img . '\'style="width:200px;height:200px;" />';
+  						echo '<a href="http://localhost/remove.php?img='.$img.'" class="button">Buy</a></br>';
+						echo '<img src=\'' . $img . '\'style="width:200px;height:200px;" />';
 						$item = $item + 1;
   						echo '<h3>' . $listings[$item] . '</h3>';
   						$item = $item + 1;
   						echo '<p>' . $listings[$item] . '</br>';
   						$item = $item + 1;
-  						echo $listings[$item] . '</p>';
+  						echo $listings[$item] . '</br>';
   						$item = $item + 1;
-						echo '<a href="http://localhost/remove.php?img='.$img.'" class="button">Buy</a>';
+  						echo "<b>Pickup By: " . $listings[$item] . '</b></p>';
+  						$item = $item + 1;
 						echo '</div></div>';
   					}
   				}

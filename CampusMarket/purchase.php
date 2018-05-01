@@ -13,6 +13,7 @@ function getAccountInfo() {
 			array_push($accountInfo, $line);
 			array_push($accountInfo, fgets($myfile));
 			array_push($accountInfo, fgets($myfile));
+			array_push($accountInfo, fgets($myfile));
 		}
 	}
 	fclose($myfile);
@@ -86,7 +87,9 @@ $list = getAccountInfo();
 		  <!-- Seller Info -->
 		  <h1>Seller Name: <?php echo substr($list[0], 6);?></h1>
 		  <h1>Seller Venmo: <?php echo $list[2];?></h1>
+		  <h1>Seller Email: <?php echo $list[3];?></h1>
 		  <h1>Price: <?php echo $_GET['price']?></h1>
+		  <h1>Pickup By: <?php echo $_GET['date']?></h1>
 		  <hr>
 		  
 		  <!-- Search -->

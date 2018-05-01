@@ -1,6 +1,4 @@
-User: Logan
+User: Brownlr4
 password
-venmo
-User: Ling
-password
-LingVenmo
+@LoganBrown
+brownlr4@miamioh.edu

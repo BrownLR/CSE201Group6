@@ -37,12 +37,13 @@ if ($uploadOk == 0) {
 // if everything is ok, try to upload file
 } else {
     if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
-		$myfile = fopen("listings.txt", "a");
+		$myfile = fopen("listings.txt", "a+");
 		fwrite($myfile, "User: " . $_POST['user'] . "\n");
 		fwrite($myfile, $target_file . "\n");
 		fwrite($myfile, $_POST['title'] . "\n");
 		fwrite($myfile, $_POST['descript'] . "\n");
 		fwrite($myfile, "$" . $_POST['price'] . "\n");
+		fwrite($myfile, $_POST['pickup'] . "\n");
 		fclose($myfile);
 		header( "refresh:1;url=http://localhost/account.php?name=".$_POST['user']."&pass=".$_POST['pass']."&err=The+file+". basename( $_FILES["fileToUpload"]["name"]). "+has+been+uploaded.");
     } else {

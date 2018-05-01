@@ -24,6 +24,7 @@ if ($uploadOk == 1) {
 	fwrite($myfile, "User: " . $_POST['name'] . "\n");
 	fwrite($myfile, $_POST['pass'] . "\n");
 	fwrite($myfile, $_POST['venmo'] . "\n");
+	fwrite($myfile, $_POST['email'] . "\n");
 	fclose($myfile);
 	header( "refresh:1;url=http://localhost/account.php?name=".$_POST['name']."&pass=".$_POST['pass']."&submit=Login" );
 } else {

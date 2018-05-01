@@ -9,8 +9,10 @@
 	<style>
 		/* Set style for each item posting */
 		#item {
+			border-color: lightgray;
 			border-style: solid;
 			border-width: 1px;
+			border-radius: 12px;
 			height: 400px;
 		}
 	</style>
@@ -84,6 +86,7 @@
 			array_push($listings, fgets($myfile));
 			array_push($listings, fgets($myfile));
 			array_push($listings, fgets($myfile));
+			array_push($listings, fgets($myfile));
 	    }
 	}
 	fclose($myfile);
@@ -126,15 +129,17 @@
 					if ($listings[$item] == null) {
 						break 1;
 					} else {
-						echo '<div id="item" class="w3-quarter">';
-						echo '<div class="placehere">';
-						echo '<img src=' . $listings[$item] . 'style="width:200px;height:200px;" />';
+  						echo '<div class="w3-quarter">';
+						echo '<div id="item" class="w3-padding-16">';
+						echo '<img src=' . $listings[$item] . 'style="width:200px;height:200px;border-radius:10%;" />';
 						$item = $item + 1;
 						echo '<h3>' . $listings[$item] . '</h3>';
 						$item = $item + 1;
 						echo '<p>' . $listings[$item] . '</br>';
 						$item = $item + 1;
-						echo $listings[$item] . '</p>';
+						echo $listings[$item] . '</br>';
+						$item = $item + 1;
+						echo "<b>Pickup By: " . $listings[$item] . '</b></p>';
 						$item = $item + 1;
 						echo '</div></div>';
 					}
@@ -160,8 +165,11 @@
 			    	Listing Description:<br>
 			    	<input type="text" name="descript" value="info...">
 					<br>
-			  		Price:<br>
+			  		Price ($):<br>
 			    	<input type="text" name="price" value="0.00">
+					<br>
+			  		Pickup By Date:<br>
+			    	<input type="date" name="pickup" value="MM/DD/YYYY">
 			    	<br><br>
 			      <input type="submit" value="Add Listing" name="submit">
 			  </form>

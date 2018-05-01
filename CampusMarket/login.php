@@ -89,14 +89,17 @@
 			    	Venmo:<br>
 			    	<input type="text" name="venmo">
 					<br>
+			    	Email:<br>
+			    	<input type="text" name="email">
+					<br>
 					Username:<br>
 			    	<input type="text" name="name">
 			    	<br>
 			    	Password:<br>
-			    	<input type="text" name="pass">
+			    	<input type="password" name="pass">
 					<br>
 			    	Confirm Password:<br>
-			    	<input type="text" name="cpass">
+			    	<input type="password" name="cpass">
 					<br><br>
 			      <input type="submit" value="Sign Up" name="submit">
 			  </form>
