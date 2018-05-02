@@ -89,7 +89,7 @@ $list = getAccountInfo();
 		  <h1>Seller Venmo: <?php echo $list[2];?></h1>
 		  <h1>Seller Email: <?php echo $list[3];?></h1>
 		  <h1>Price: <?php echo $_GET['price']?></h1>
-		  <h1>Pickup By: <?php echo $_GET['date']?></h1>
+		  <h1>Pickup By: <?php echo $_GET['pickup']?></h1>
 		  <hr>
 		  
 		  <!-- Search -->
