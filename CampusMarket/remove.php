@@ -40,6 +40,10 @@ $myfile = fopen("listings.txt", "w") or die("Unable to open file!");
 fwrite($myfile, $lines);
 unlink($img);
 fclose($myfile);
-$url = "http://localhost/purchase.php?name=".urlencode($name)."&price=".urlencode($price)."&pickup=".urlencode($pickup);
-header("refresh:1; url={$url}");
+if ($_GET['purchase'] == 1) {
+	$url = "http://localhost/purchase.php?name=".urlencode($name)."&price=".urlencode($price)."&pickup=".urlencode($pickup);
+	header("refresh:1; url={$url}");
+} else {
+	header("refresh:1;url=http://localhost/account.php?name=".$_GET['user']."&pass=".$_GET['pass']."&err=The+listing+has+been+removed.");
+}
 ?>

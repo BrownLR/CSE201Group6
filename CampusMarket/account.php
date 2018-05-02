@@ -1,45 +1,3 @@
-<!DOCTYPE html>
-<html>
-	<title>Campus Market</title>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Karma">
-	
-	<style>
-		/* Set style for each item posting */
-		#item {
-			border-color: lightgray;
-			border-style: solid;
-			border-width: 1px;
-			border-radius: 12px;
-			height: 400px;
-		}
-	</style>
-
-	<script>
-	// Script to open and close sidebar
-	var first_click = true;
-	var nav = document.getElementById("nav");
-	function w3_open() {
-	    document.getElementById("mySidebar").style.display = "block";
-	}
- 
-	function w3_close() {
-	    document.getElementById("mySidebar").style.display = "none";
-	}
-	function is_clicked(){
-		if (first_click){
-			w3_open();
-			first_click = false;
-		}
-		else {
-			w3_close();
-			first_click = true;
-		}
-	}
-	</script>
-
 <?php
 	$file = 'accounts.txt';
 	$username = $_GET['name'];
@@ -64,12 +22,11 @@
 			}
 	    }
 	}
+	if ($username == '') {
+		$valid = 0;
+	}
 	if ($valid == 0) {
-		echo '<div class="w3-center">';
-		echo 'Invalid USERNAME or PASSWORD';
-		echo '<br>';
-		echo '<a href="http://localhost/login.php?">Click Here to Return</a>'; 
-		echo '</div>';
+		header("refresh:1;url=http://localhost/login.php?err=Invalid+Username+or+Password");
 		exit;
 	}
 	fclose($myfile);
@@ -98,6 +55,57 @@
 	}
 ?>
 
+<html>
+	<title>Campus Market</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Karma">
+	
+	<style>
+		/* Set style for each item posting */
+		#item {
+			border-color: lightgray;
+			border-style: solid;
+			border-width: 1px;
+			border-radius: 12px;
+			height: 400px;
+		}
+		a.button {
+		    -webkit-appearance: button;
+		    -moz-appearance: button;
+		    appearance: button;
+			padding: 5px 11px;
+		    text-decoration: none;
+		    color: initial;
+			position: relative;
+			bottom: 10px;
+			left: 90px;
+		}
+	</style>
+
+	<script>
+	// Script to open and close sidebar
+	var first_click = true;
+	var nav = document.getElementById("nav");
+	function w3_open() {
+	    document.getElementById("mySidebar").style.display = "block";
+	}
+ 
+	function w3_close() {
+	    document.getElementById("mySidebar").style.display = "none";
+	}
+	function is_clicked(){
+		if (first_click){
+			w3_open();
+			first_click = false;
+		}
+		else {
+			w3_close();
+			first_click = true;
+		}
+	}
+	</script>
 	<body>
 		<!-- Sidebar (hidden by default) -->
 		<nav class="w3-sidebar w3-bar-block w3-card w3-top w3-xlarge w3-animate-left" style="display:none;z-index:2;width:40%;min-width:300px" id="mySidebar">
@@ -131,7 +139,9 @@
 					} else {
   						echo '<div class="w3-quarter">';
 						echo '<div id="item" class="w3-padding-16">';
-						echo '<img src=' . $listings[$item] . 'style="width:200px;height:200px;border-radius:10%;" />';
+						$img = $listings[$item];
+						echo '<a href="http://localhost/remove.php?img='.$img.'&user='.$username.'&pass='.$password.'&purchase=0" class="button">Delete</a></br>';
+						echo '<img src=' . $img . 'style="width:200px;height:200px;border-radius:10%;" />';
 						$item = $item + 1;
 						echo '<h3>' . $listings[$item] . '</h3>';
 						$item = $item + 1;
@@ -160,13 +170,13 @@
 			    	<input type="file" name="fileToUpload" id="fileToUpload">
 					<br>
 			  		Listing Title:<br>
-			    	<input type="text" name="title" value="Item Name">
+			    	<input type="text" onfocus="this.value=''" name="title" value="Item Name">
 			    	<br>
 			    	Listing Description:<br>
-			    	<input type="text" name="descript" value="info...">
+			    	<input type="text" onfocus="this.value=''" name="descript" value="info...">
 					<br>
 			  		Price ($):<br>
-			    	<input type="text" name="price" value="0.00">
+			    	<input type="text" onfocus="this.value=''" name="price" value="0.00">
 					<br>
 			  		Pickup By Date:<br>
 			    	<input type="date" name="pickup" value="MM/DD/YYYY">
@@ -179,7 +189,7 @@
 		  <!-- Footer -->
 		  <footer class="w3-row-padding w3-padding-32">
 		    <div class="w3-third">
-		      <h3>FOOTER</h3>
+		      <h3>© 2018</h3>
 		    </div>
   
 		    <div class="w3-third">

@@ -52,7 +52,7 @@
 		<div class="w3-top">
 			<div class="w3-white w3-xlarge" style="max-width:1300px;margin:auto">
 				<div id="nav"class="w3-button w3-padding-16 w3-left" onclick="is_clicked()">☰</div>
-				<div class="w3-right w3-padding-16"><form action="login.php" method="get"><input type="submit" value="Accounts"></form></div>
+				<div class="w3-right w3-padding-16"><form action="login.php" method="get"><input type="submit" value="Login"></form></div>
 				<div class="w3-center w3-padding-16">Campus Market</div>
 			</div>
 		</div>
@@ -62,12 +62,14 @@
 		<div class="w3-main w3-content w3-padding" style="max-width:1200px;margin-top:100px">
 		  
 		  <!-- Search -->
+		  <h1 class="w3-center">Find unique items to turn your <br> house into a home.</h1>
 		  <div class="w3-center w3-padding-32">
 			  <form action="/search.php" method="get" target="_self">
-			    <input type="text" name="search" value="Search Criteria...">
+			    <input type="text" name="search" onfocus="this.value=''" value="Search Criteria...">
 			    <input type="submit" value="search">
 			  </form>
 	  	  </div>
+		  <h3 class="w3-center">Login or sign up to post your own items for sale.</h3>
   		
 		  <hr id="about">
 
@@ -77,7 +79,7 @@
 		    <div class="w3-padding-32">
 		      <h4><b>Conveniently Buy and Sell Home Necessities!</b></h4>
 		      <h6><i>Make Decorating Easier</i></h6>
-		      <p>The Campus Market is a web application to make moving in and out of campus and near campus housing easier. The software is designed for universities. Students can buy or sell their used items in their own communities. Since all transactions occur among people who are nearby each other, they can drop off or pick up items easily and avoid shipping costs.</p>
+		      <p>The Campus Market is your local tool to make moving in and out of campus and near campus housing easier. The software is designed for universities. Students can buy or sell their used items in their own communities. Since all transactions occur among people who are nearby each other, they can drop off or pick up items easily and avoid shipping costs.</p>
 		    </div>
 		  </div>
 		  <hr>
@@ -85,7 +87,7 @@
 		  <!-- Footer -->
 		  <footer class="w3-row-padding w3-padding-32">
 		    <div class="w3-third">
-		      <h3>FOOTER</h3>
+		      <h3>© 2018</h3>
 		    </div>
   
 		    <div class="w3-third">

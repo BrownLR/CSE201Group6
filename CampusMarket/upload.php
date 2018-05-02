@@ -45,7 +45,7 @@ if ($uploadOk == 0) {
 		fwrite($myfile, "$" . $_POST['price'] . "\n");
 		fwrite($myfile, $_POST['pickup'] . "\n");
 		fclose($myfile);
-		header( "refresh:1;url=http://localhost/account.php?name=".$_POST['user']."&pass=".$_POST['pass']."&err=The+file+". basename( $_FILES["fileToUpload"]["name"]). "+has+been+uploaded.");
+		header( "refresh:1;url=http://localhost/account.php?name=".$_POST['user']."&pass=".$_POST['pass']."&err=Listing has been successfully added.");
     } else {
         header( "refresh:1;url=http://localhost/account.php?name=".$_POST['user']."&pass=".$_POST['pass']."&err=broke");
     }
