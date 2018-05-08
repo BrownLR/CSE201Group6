@@ -1,9 +1,22 @@
 <?php
 $target_dir = "images/";
-$target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
+
+function random_string($length) {
+    $key = '';
+    $keys = array_merge(range(0, 9), range('a', 'z'));
+
+    for ($i = 0; $i < $length; $i++) {
+        $key .= $keys[array_rand($keys)];
+    }
+
+    return $key;
+}
+
 $uploadOk = 1;
 $error = 0;
+$target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
 $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+$target_file = $target_dir . random_string(50) . "." . $imageFileType;
 // Check if image file is a actual image or fake image
 if(isset($_POST["submit"])) {
     $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
@@ -15,11 +28,28 @@ if(isset($_POST["submit"])) {
         $uploadOk = 0;
     }
 }
-// Check if file already exists
-if (file_exists($target_file)) {
-    $error = "Sorry, file already exists.";
-    $uploadOk = 0;
+
+// Make sure required fields are present
+if($_POST['title'] == "") {
+	$uploadOk = 0;
+	$error = "Title is required. ";
 }
+
+if($_POST['descript'] == "") {
+	$uploadOk = 0;
+	$error = "Description is required. ";
+}
+
+if($_POST['price'] == "") {
+	$uploadOk = 0;
+	$error = "Price is required. ";
+}
+
+if($_POST['pickup'] == "") {
+	$uploadOk = 0;
+	$error = "Date for pickup or delivery is required. ";
+}
+
 // Check file size
 if ($_FILES["fileToUpload"]["size"] > 5000000) {
     $error = "Sorry, your file is too large.";
