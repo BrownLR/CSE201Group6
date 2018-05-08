@@ -86,7 +86,7 @@
 		  <div class="w3-container w3-padding-32 w3-half w3-center">  
 			  <h3>Sign Up</h3>
 			  <form action="uploadAccount.php" method="post" enctype="multipart/form-data">
-			    	Venmo:<br>
+			    	Venmo (Optional):<br>
 			    	<input type="text" name="venmo">
 					<br>
 			    	Email:<br>

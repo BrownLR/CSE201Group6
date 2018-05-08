@@ -22,6 +22,7 @@ function getMatches($str) {
 		}
 	    if (substr($line, 0, 6) == "images") {
 			$lastImg = $line;
+			continue;
 	    }
 		if (strpos($line, $str) !== false) {
 			if (!in_array($lastImg, $images)) {
