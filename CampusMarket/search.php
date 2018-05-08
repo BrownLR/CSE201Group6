@@ -7,6 +7,8 @@ $contents = file_get_contents($file);
 
 // escape special characters in the query
 $pattern = preg_quote($searchfor, '/');
+$pattern = strtolower($pattern);
+$pattern = str_replace("\\", "", $pattern);
 
 function getMatches($str) {
 	$images = array();
@@ -15,10 +17,13 @@ function getMatches($str) {
 	while(!feof($myfile)) {
 		$line = fgets($myfile);
 		$line = str_replace("\n", "", $line);
+		if (substr($line, 0, 1) == "$") {
+			continue;
+		}
 	    if (substr($line, 0, 6) == "images") {
 			$lastImg = $line;
 	    }
-		if (stripos($line, $str) !== false) {
+		if (strpos($line, $str) !== false) {
 			if (!in_array($lastImg, $images)) {
 				array_push($images, $lastImg);
 			}
